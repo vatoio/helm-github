@@ -130,6 +130,7 @@ fi
 
 # Checkout the correct branch 
 git checkout $BRANCH
+git pull --rebase;
 
 # Exit the repo
 cd -
