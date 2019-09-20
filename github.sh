@@ -121,16 +121,17 @@ fi
 # Checkout the repo & enter it
 if [ -d "${REPO_LOCATION}" ]; then
     cd $REPO_LOCATION
-    git checkout master;
-    git pull;
+    git fetch --all
+    git checkout -f $BRANCH;
+    git reset --hard origin/$BRANCH;
 else
     git clone $REPO $REPO_LOCATION;
     cd $REPO_LOCATION;
 fi
 
 # Checkout the correct branch 
-git checkout $BRANCH
-git pull --rebase;
+#git checkout $BRANCH
+#git pull --rebase;
 
 # Exit the repo
 cd -
