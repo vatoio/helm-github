@@ -125,7 +125,8 @@ if [ -d "${REPO_LOCATION}" ]; then
     git checkout -f $BRANCH;
     git reset --hard origin/$BRANCH;
 else
-    git clone $REPO $REPO_LOCATION;
+    #git clone $REPO $REPO_LOCATION;
+    git clone -b $BRANCH --single-branch $REPO $REPO_LOCATION;
     cd $REPO_LOCATION;
 fi
 
